@@ -13,19 +13,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="657cd55d-7f64-44f5-8f70-7a3ae331ac1a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/dock_sel_focus.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/excludeFromValidation.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/layout/settings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/menu/main_menu.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/dclock/ClockSettingActivity.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/dclock/utils/LocalBinder.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AndroidManifest.xml" afterPath="$PROJECT_DIR$/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/com/dclock/R.java" afterPath="$PROJECT_DIR$/gen/com/dclock/R.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dclock/ClockActivity.java" afterPath="$PROJECT_DIR$/src/com/dclock/ClockActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dclock/ClockService.java" afterPath="$PROJECT_DIR$/src/com/dclock/ClockService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dclock/ClockWidget.java" afterPath="$PROJECT_DIR$/src/com/dclock/ClockWidget.java" />
     </list>
     <ignored path="dClock.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -92,13 +82,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ClockActivity.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="ClockActivity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/dclock/ClockActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="89" column="48" selection-start="2418" selection-end="2418" vertical-scroll-proportion="0.5294118">
+            <state line="90" column="28" selection-start="2447" selection-end="2447" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LocalBinder.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/dclock/utils/LocalBinder.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="9" column="0" selection-start="215" selection-end="215" vertical-scroll-proportion="0.0">
               <folding>
-                <element signature="e#620#929#0" expanded="true" />
-                <element signature="e#922#923#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -117,9 +115,7 @@
         <entry file="file://$PROJECT_DIR$/src/com/dclock/ClockSettingActivity.java">
           <provider selected="true" editor-type-id="text-editor">
             <state line="9" column="33" selection-start="191" selection-end="211" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -142,13 +138,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ClockService.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="ClockService.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/dclock/ClockService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="4" selection-start="648" selection-end="648" vertical-scroll-proportion="0.0">
+            <state line="23" column="32" selection-start="640" selection-end="640" vertical-scroll-proportion="0.08476518">
               <folding>
-                <element signature="e#408#540#0" expanded="true" />
-                <element signature="e#533#534#0" expanded="true" />
+                <element signature="e#548#680#0" expanded="true" />
+                <element signature="e#673#674#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -174,7 +170,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/com/dclock/Views/FontableTextView.java" />
         <option value="$PROJECT_DIR$/src/com/dclock/views/FontableTextView.java" />
         <option value="$PROJECT_DIR$/res/layout/main.xml" />
         <option value="$PROJECT_DIR$/src/com/dclock/utils/UIHelper.java" />
@@ -184,12 +179,13 @@
         <option value="$PROJECT_DIR$/res/xml/clock_widget.xml" />
         <option value="$PROJECT_DIR$/src/com/dclock/utils/BootReciever.java" />
         <option value="$PROJECT_DIR$/src/com/dclock/ClockWidget.java" />
-        <option value="$PROJECT_DIR$/src/com/dclock/ClockService.java" />
         <option value="$PROJECT_DIR$/res/layout/settings.xml" />
         <option value="$PROJECT_DIR$/src/com/dclock/ClockSettingActivity.java" />
         <option value="$PROJECT_DIR$/res/menu/man_menu.xml" />
         <option value="$PROJECT_DIR$/src/com/dclock/ClockActivity.java" />
         <option value="$PROJECT_DIR$/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/src/com/dclock/utils/LocalBinder.java" />
+        <option value="$PROJECT_DIR$/src/com/dclock/ClockService.java" />
       </list>
     </option>
   </component>
@@ -230,6 +226,16 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -244,7 +250,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="DClock" />
+              <option name="myItemId" value="dClock" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -254,7 +260,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="DClock" />
+              <option name="myItemId" value="dClock" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -272,29 +278,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="DClock" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dclock" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
               <option name="myItemId" value="dClock" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DClock" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -307,114 +291,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="utils" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dClock" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DClock" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="xml" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dClock" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DClock" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="values" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dClock" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DClock" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="menu" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dClock" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DClock" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="layout" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dClock" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DClock" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="drawable" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dClock" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DClock" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fonts" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -434,16 +310,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope">
-        <subPane subId="Project Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -453,7 +319,7 @@
     <property name="ExportedApkPath" value="E:\Working\Projects\Phone\DClock\bin\dClock.apk" />
     <property name="MemberChooser.sorted" value="false" />
     <property name="recentsLimit" value="5" />
-    <property name="options.lastSelected" value="project.propVCSSupport.VCSs.TFS" />
+    <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
     <property name="ExportedModule" value="dClock" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
@@ -696,7 +562,6 @@
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32959402" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32959402" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32959402" sideWeight="0.6004464" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3986637" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -716,6 +581,7 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32959402" sideWeight="0.6004464" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Android Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32924107" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -859,52 +725,48 @@
         <state line="387" column="41" selection-start="19235" selection-end="19235" vertical-scroll-proportion="0.019767443" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dclock/ClockService.java">
+    <entry file="file://$PROJECT_DIR$/src/com/dclock/ClockActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="4" selection-start="648" selection-end="648" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#408#540#0" expanded="true" />
-            <element signature="e#533#534#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dclock/ClockWidget.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="62" selection-start="859" selection-end="859" vertical-scroll-proportion="0.0">
+        <state line="90" column="28" selection-start="2447" selection-end="2447" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/settings.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="67" selection-start="1290" selection-end="1290" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="30" column="67" selection-start="1290" selection-end="1290" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/dclock/ClockSettingActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="33" selection-start="191" selection-end="211" vertical-scroll-proportion="0.0">
+        <state line="9" column="33" selection-start="191" selection-end="211" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dclock/ClockWidget.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="62" selection-start="859" selection-end="859" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="94" selection-start="1067" selection-end="1067" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dclock/utils/LocalBinder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="0" selection-start="215" selection-end="215" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
+    <entry file="file://$PROJECT_DIR$/src/com/dclock/ClockService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="94" selection-start="1067" selection-end="1067" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dclock/ClockActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="89" column="48" selection-start="2418" selection-end="2418" vertical-scroll-proportion="0.5294118">
+        <state line="23" column="32" selection-start="640" selection-end="640" vertical-scroll-proportion="0.08476518">
           <folding>
-            <element signature="e#620#929#0" expanded="true" />
-            <element signature="e#922#923#0" expanded="true" />
+            <element signature="e#548#680#0" expanded="true" />
+            <element signature="e#673#674#0" expanded="true" />
           </folding>
         </state>
       </provider>

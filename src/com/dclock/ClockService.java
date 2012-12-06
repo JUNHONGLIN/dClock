@@ -9,10 +9,13 @@ import android.os.Handler;
 import android.os.IBinder;
 import android.text.format.Time;
 import android.util.Log;
+import com.dclock.utils.LocalBinder;
 
 public class ClockService extends Service
 {
     private Time prevTime;
+    private IBinder binder = new LocalBinder<ClockService>(this);
+    private boolean started = false;
 
     private Runnable callback = new Runnable()
     {
@@ -28,7 +31,7 @@ public class ClockService extends Service
     @Override
     public IBinder onBind(Intent intent)
     {
-        return null;  //To change body of implemented methods use File | Settings | File Templates.
+        return binder;
     }
 
     @Override
@@ -42,8 +45,9 @@ public class ClockService extends Service
 
         if (action != null && !action.isEmpty())
         {
-            if (intent.getAction().equalsIgnoreCase(ClockWidget.ClockStart))
+            if (intent.getAction().equalsIgnoreCase(ClockWidget.ClockStart) && !started)
             {
+                started = true;
                 prevTime = new Time(Time.getCurrentTimezone());
                 prevTime.setToNow();
                 runTimer();
@@ -52,7 +56,7 @@ public class ClockService extends Service
             {
                 if (intent.getAction().equalsIgnoreCase(ClockWidget.ClockStop))
                 {
-                    cleanup();
+                    started = false;
                     stopSelf();
                 }
             }
@@ -61,10 +65,18 @@ public class ClockService extends Service
        return START_STICKY;
    }
 
-    public void cleanup()
-    {
-        handler.removeCallbacks(callback);
-    }
+   @Override
+   public void onDestroy()
+   {
+        started = false;
+        cleanup();
+        super.onDestroy();
+   }
+
+   public void cleanup()
+   {
+       handler.removeCallbacks(callback);
+   }
 
     public void updateTime()
     {
@@ -87,6 +99,9 @@ public class ClockService extends Service
 
     private void runTimer()
     {
-        handler.postDelayed(callback, 1000);
+        if (started)
+        {
+            handler.postDelayed(callback, 1000);
+        }
     }
 }
