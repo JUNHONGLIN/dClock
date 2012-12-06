@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:digitalClock="http://schemas.android.com/apk/res/com.dclock"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    style="@style/WidgetBackground">
+    <com.dclock.views.FontableTextView
+        android:text="19:17"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/CurrentTime"
+        android:typeface="normal"
+        android:textStyle="normal"
+        android:textSize="88sp"
+        android:layout_marginRight="30.0dp"
+        android:focusable="false"
+        android:clickable="false"
+        android:gravity="right"
+        digitalClock:font="AndroidClock.ttf" />
+    <TextView
+        android:text="понедельник, 5 ноября 2012"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/CurrentDate"
+        android:typeface="normal"
+        android:textStyle="normal"
+        android:textSize="12sp"
+        android:layout_marginRight="34.0dp"
+        android:focusable="false"
+        android:clickable="true"
+        android:gravity="right" />
+</LinearLayout>
