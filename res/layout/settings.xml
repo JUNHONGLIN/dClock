@@ -13,7 +13,7 @@
         android:focusable="true"
         android:clickable="true"
         android:checked="false"
-        android:checkMark="@drawable/dock_sel_focus"/>
+        android:checkMark="@drawable/dock_sel_focus" android:gravity="center_vertical"/>
     <CheckedTextView
         android:text="24 hour clock"
         android:textAppearance="?android:attr/textAppearanceLarge"
@@ -23,7 +23,7 @@
         android:focusable="true"
         android:clickable="true"
         android:checked="false"
-        android:checkMark="@drawable/dock_sel_focus"/>
+        android:checkMark="@drawable/dock_sel_focus" android:gravity="center_vertical"/>
     <CheckedTextView
         android:text="Show day information"
         android:textAppearance="?android:attr/textAppearanceLarge"
@@ -33,5 +33,5 @@
         android:focusable="true"
         android:clickable="true"
         android:checked="true"
-        android:checkMark="@drawable/dock_sel_focus" />
+        android:checkMark="@drawable/dock_sel_focus" android:gravity="center_vertical"/>
 </LinearLayout>

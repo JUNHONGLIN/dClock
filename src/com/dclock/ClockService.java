@@ -14,7 +14,6 @@ import com.dclock.utils.LocalBinder;
 public class ClockService extends Service
 {
     private Time prevTime;
-    private IBinder binder = new LocalBinder<ClockService>(this);
     private boolean started = false;
 
     private Runnable callback = new Runnable()
@@ -31,7 +30,7 @@ public class ClockService extends Service
     @Override
     public IBinder onBind(Intent intent)
     {
-        return binder;
+        return new LocalBinder<ClockService>(this);
     }
 
     @Override
