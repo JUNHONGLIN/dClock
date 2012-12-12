@@ -1,25 +1,26 @@
 package com.dclock;
 
 import android.app.Service;
-import android.content.BroadcastReceiver;
-import android.content.Context;
 import android.content.Intent;
-import android.content.IntentFilter;
 import android.os.Handler;
 import android.os.IBinder;
 import android.text.format.Time;
 import android.util.Log;
-import com.dclock.utils.LocalBinder;
+
+import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.atomic.AtomicReference;
 
 public class ClockService extends Service
 {
+    private final String ServiceTag = "dClockService";
     private Time prevTime;
-    private boolean started = false;
+    private AtomicBoolean started = new AtomicBoolean(false);
 
     private Runnable callback = new Runnable()
     {
         @Override
-        public void run() {
+        public void run()
+        {
             updateTime();
             runTimer();
         }
@@ -30,12 +31,13 @@ public class ClockService extends Service
     @Override
     public IBinder onBind(Intent intent)
     {
-        return new LocalBinder<ClockService>(this);
+        return null;
     }
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId)
    {
+        Log.d(ServiceTag, "onStartCommand start");
         String action = null;
         if (intent != null)
         {
@@ -44,9 +46,10 @@ public class ClockService extends Service
 
         if (action != null && !action.isEmpty())
         {
-            if (intent.getAction().equalsIgnoreCase(ClockWidget.ClockStart) && !started)
+            Log.d(ServiceTag, String.format("Intent action is \'%1s\'", action));
+            if (action.equalsIgnoreCase(ClockWidget.ClockStart) && !started.getAndSet(true))
             {
-                started = true;
+                Log.d(ServiceTag, "runTimer");
                 prevTime = new Time(Time.getCurrentTimezone());
                 prevTime.setToNow();
                 runTimer();
@@ -55,21 +58,25 @@ public class ClockService extends Service
             {
                 if (intent.getAction().equalsIgnoreCase(ClockWidget.ClockStop))
                 {
-                    started = false;
+                    Log.d(ServiceTag, "stopSelf");
+                    started.set(false);
                     stopSelf();
                 }
             }
         }
 
+       Log.d(ServiceTag, "onStartCommand end");
        return START_STICKY;
    }
 
    @Override
    public void onDestroy()
    {
-        started = false;
+        Log.d(ServiceTag, "onDestroy start");
+        started.set(false);
         cleanup();
         super.onDestroy();
+        Log.d(ServiceTag, "onDestroy end");
    }
 
    public void cleanup()
@@ -98,9 +105,17 @@ public class ClockService extends Service
 
     private void runTimer()
     {
-        if (started)
+        if (started.get())
         {
-            handler.postDelayed(callback, 1000);
+            try
+            {
+                handler.postDelayed(callback, 1000);
+            }
+            catch (Exception ex)
+            {
+                Log.e(ServiceTag, "Run timer error", ex);
+                handler.postDelayed(callback, 1000);
+            }
         }
     }
 }
