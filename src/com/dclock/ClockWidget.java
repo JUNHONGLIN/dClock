@@ -2,13 +2,11 @@ package com.dclock;
 
 import android.appwidget.AppWidgetManager;
 import android.appwidget.AppWidgetProvider;
-import android.content.BroadcastReceiver;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.*;
 import android.text.format.Time;
-import android.util.Log;
 import android.widget.RemoteViews;
 
 public class ClockWidget extends AppWidgetProvider
