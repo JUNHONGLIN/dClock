@@ -3,15 +3,17 @@ package com.dclock;
 import android.app.IntentService;
 import android.app.Service;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Handler;
 import android.os.IBinder;
+import android.preference.PreferenceManager;
 import android.text.format.Time;
 import android.util.Log;
 
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicReference;
 
-public class ClockService extends IntentService
+public class ClockService extends IntentService implements SharedPreferences.OnSharedPreferenceChangeListener
 {
     private static final String ServiceTag = "dClockService";
     private Time prevTime;
@@ -47,6 +49,9 @@ public class ClockService extends IntentService
             Log.d(ServiceTag, String.format("Intent action is \'%1s\'", action));
             if (action.equalsIgnoreCase(ClockWidget.ClockStart) && !started.getAndSet(true))
             {
+                SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+                preferences.registerOnSharedPreferenceChangeListener(this);
+
                 Log.d(ServiceTag, "runTimer");
                 runTimer();
             }
@@ -69,6 +74,9 @@ public class ClockService extends IntentService
    {
         Log.d(ServiceTag, "onDestroy start");
         cleanup();
+
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        preferences.unregisterOnSharedPreferenceChangeListener(this);
         super.onDestroy();
         Log.d(ServiceTag, "onDestroy end");
    }
@@ -101,12 +109,17 @@ public class ClockService extends IntentService
             now.hour != prevTime.hour ||
             now.minute != prevTime.minute)
         {
-            Intent intent = new Intent(this.getApplicationContext(), ClockWidget.class);
-            intent.setAction(ClockWidget.ACTION_REDRAW);
-            sendBroadcast(intent);
+            SendUpdateIntent();
         }
 
         prevTime = now;
+    }
+
+    private void SendUpdateIntent()
+    {
+        Intent intent = new Intent(this.getApplicationContext(), ClockWidget.class);
+        intent.setAction(ClockWidget.ACTION_REDRAW);
+        sendBroadcast(intent);
     }
 
     private void runTimer()
@@ -134,5 +147,12 @@ public class ClockService extends IntentService
         });
 
         clockThread.run();
+    }
+
+    @Override
+    public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String s)
+    {
+        Log.d(ServiceTag, "SendUpdateIntent");
+        SendUpdateIntent();
     }
 }

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="Visible">
+        <CheckBoxPreference
+                android:title="Use 12 hour"
+                android:defaultValue="false"
+                android:summary="Use 12 or 24 hour style"
+                android:key="use12HourPref" />
+        <CheckBoxPreference
+                android:title="Show AM/PM"
+                android:defaultValue="false"
+                android:summary="Show AM/PM in time"
+                android:key="showAmPmPref" />
+    </PreferenceCategory>
+</PreferenceScreen>

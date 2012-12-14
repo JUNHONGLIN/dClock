@@ -5,8 +5,11 @@ import android.appwidget.AppWidgetProvider;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.*;
+import android.preference.PreferenceManager;
 import android.text.format.Time;
+import android.util.Log;
 import android.widget.RemoteViews;
 
 public class ClockWidget extends AppWidgetProvider
@@ -76,13 +79,26 @@ public class ClockWidget extends AppWidgetProvider
         ComponentName thisWidget = new ComponentName(context, ClockWidget.class);
         AppWidgetManager manager = AppWidgetManager.getInstance(context);
         RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.widget);
-        views.setImageViewBitmap(R.id.CurrentTimeImage, BuildTime(context, now.format("%A, %d %B %Y"), now.format("%H:%M")));
+
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
+        boolean useAmPm = preferences.getBoolean("showAmPmPref", false);
+        boolean use12Hour = preferences.getBoolean("use12HourPref", false);
+
+        String hour = use12Hour ? now.format("%I:%M") : now.format("%H:%M");
+        String amPm = null;
+        if (useAmPm)
+        {
+            hour = now.format("%I:%M");
+            amPm = now.hour >= 12 ? "PM" : "AM";
+        }
+
+        views.setImageViewBitmap(R.id.CurrentTimeImage, BuildTime(context, now.format("%A, %d %B %Y"), hour, amPm));
         manager.updateAppWidget(thisWidget, views);
     }
 
-    private static Bitmap BuildTime(Context context, String date, String time)
+    private static Bitmap BuildTime(Context context, String date, String time, String ampm)
     {
-        Bitmap result = Bitmap.createBitmap(400, 120, Bitmap.Config.ARGB_4444);
+        Bitmap result = Bitmap.createBitmap(400, 80, Bitmap.Config.ARGB_4444);
         Canvas myCanvas = new Canvas(result);
         Paint paint = new Paint();
         Typeface clock = Typeface.createFromAsset(context.getAssets(), "fonts/AndroidClock.ttf");
@@ -94,11 +110,18 @@ public class ClockWidget extends AppWidgetProvider
         paint.setColor(Color.WHITE);
         paint.setTextSize(14);
         paint.setTextAlign(Paint.Align.RIGHT);
-        myCanvas.drawText(date, 400, 116, paint);
+        myCanvas.drawText(date, 400, 76, paint);
+        int rightSide = 400;
+        if (ampm != null && !ampm.isEmpty())
+        {
+            paint.setTextSize(20);
+            rightSide -= paint.measureText(ampm);
+            myCanvas.drawText(ampm, 400, 28, paint);
+        }
 
         paint.setTypeface(clock);
         paint.setTextSize(100);
-        myCanvas.drawText(time, 400, 100, paint);
+        myCanvas.drawText(time, rightSide, 60, paint);
 
         return result;
     }

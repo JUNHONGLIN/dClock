@@ -5,20 +5,16 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
+import android.preference.PreferenceActivity;
 import android.widget.TextView;
 
-public class ClockSettingActivity extends Activity
+public class ClockSettingActivity extends PreferenceActivity
 {
     public void onCreate(Bundle savedInstanceState)
     {
 
         super.onCreate(savedInstanceState);
-
-        // Set our view from the "main" layout resource
-        setContentView(R.layout.settings);
-
-        // Getting text views
-
+        addPreferencesFromResource(R.xml.preferences);
     }
 
 }
