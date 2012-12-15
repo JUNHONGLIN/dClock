@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Цифровые часы</string>
+    <string name="widget_name">Цифровые часы</string>
+    <string name="ic_settings">Настройки</string>
+    <string name="pref_visible_group">Отображение времени</string>
+    <string name="pref_use_12_hour_title">12-ти часовое время</string>
+    <string name="pref_use_12_hour_summary">Использовать 12-ти или 24-х часовое отображение времени</string>
+    <string name="pref_show_ampm_title">Показывать AM/PM</string>
+    <string name="pref_show_ampm_summary">Показывать во времени индикатор AM/PM</string>
+</resources>
