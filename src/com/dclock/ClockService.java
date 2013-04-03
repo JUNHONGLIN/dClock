@@ -1,22 +1,19 @@
 package com.dclock;
 
 import android.app.IntentService;
-import android.app.Service;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.os.Handler;
 import android.os.IBinder;
 import android.preference.PreferenceManager;
-import android.text.format.Time;
 import android.util.Log;
 
+import java.util.Calendar;
 import java.util.concurrent.atomic.AtomicBoolean;
-import java.util.concurrent.atomic.AtomicReference;
 
 public class ClockService extends IntentService implements SharedPreferences.OnSharedPreferenceChangeListener
 {
     private static final String ServiceTag = "dClockService";
-    private Time prevTime;
+    private Calendar prevTime;
     private Thread clockThread;
     private AtomicBoolean started = new AtomicBoolean(false);
 
@@ -100,14 +97,13 @@ public class ClockService extends IntentService implements SharedPreferences.OnS
 
     public void updateTime()
     {
-        Time now = new Time(Time.getCurrentTimezone());
-        now.setToNow();
+        Calendar now = Calendar.getInstance();
 
-        if (now.year != prevTime.year ||
-            now.month != prevTime.month ||
-            now.monthDay != prevTime.monthDay ||
-            now.hour != prevTime.hour ||
-            now.minute != prevTime.minute)
+        if (now.get(Calendar.YEAR) != prevTime.get(Calendar.YEAR) ||
+            now.get(Calendar.MONTH) != prevTime.get(Calendar.MONTH) ||
+            now.get(Calendar.DAY_OF_MONTH) != prevTime.get(Calendar.DAY_OF_MONTH) ||
+            now.get(Calendar.HOUR_OF_DAY) != prevTime.get(Calendar.HOUR_OF_DAY) ||
+            now.get(Calendar.MINUTE) != prevTime.get(Calendar.MINUTE))
         {
             SendUpdateIntent();
         }
@@ -129,8 +125,8 @@ public class ClockService extends IntentService implements SharedPreferences.OnS
             @Override
             public void run()
             {
-                prevTime = new Time(Time.getCurrentTimezone());
-                prevTime.setToNow();
+                prevTime = Calendar.getInstance();
+                prevTime.set(1900, 1, 1, 0, 0);
                 while(started.get())
                 {
                     updateTime();
